@@ -4,6 +4,7 @@ import asyncio
 from hackingaibot import BotClient, StartTime, OWNER_ID, BOT_USERNAME, REPO_NAME, SUDO_USERS, DEV_USERS
 from telethon import events, custom, Button
 from datetime import datetime
+import time
 
 def get_uptime(milliseconds: int) -> str:
     seconds, milliseconds = divmod(int(milliseconds), 1000)
