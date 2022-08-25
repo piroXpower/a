@@ -25,7 +25,9 @@ def get_uptime(milliseconds: int) -> str:
 REPO_NAME = "Hacking-AiBot"
 
 glad_logo = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
+
 help_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
+
 dev_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 **/logs:** Get logs of your heroku app.
