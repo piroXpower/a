@@ -23,7 +23,7 @@ async def dyno_usage(dyno):
     else:
         return
     lol = await dyno.reply("**Processing...**")
-    await lol.edit("**Restarting bot...**\nPlease wait 1-2 minutes...\nTo check if bot is awake use /ping command.")
+    await lol.edit("**Restarting bot...**\nPlease wait 5 seconds atmost...\nTo check if bot is awake use /ping command.")
     args = [sys.executable, "-m", "hackingaibot"]
     os.execl(sys.executable, *args)
 
