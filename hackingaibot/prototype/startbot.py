@@ -265,8 +265,8 @@ async def start(e):
 async def start(e):
     ping_start = datetime.now()
     ping_end = datetime.now()
-    ms = (ping_end-ping_start).microseconds / 1000
-    uptime = TeamArsenic_time((time.time() - StartTime) * 1000)
+    ms = (ping_end-ping_start).microseconds
+    uptime = get_uptime((time.time() - StartTime) * 1000)
     pomg = f"•• Pᴏɴɢ !! ••\n⏱ Pɪɴɢ sᴘᴇᴇᴅ : {ms}ᴍs\n⏳ Uᴘᴛɪᴍᴇ - {uptime}"
     await e.client.send_message(e.chat_id, "🎆")
     await e.reply(pomg)
