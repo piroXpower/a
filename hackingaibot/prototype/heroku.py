@@ -51,6 +51,7 @@ async def _(logg):
     await logg.client.send_file(
         logg.chat_id,
         "logs.txt",
+        thumb="hackingaibot/resources/Gladiators.jpeg",
         reply_to=logg.id,
         caption="@Gladiators_Projects Logs.",
     )
