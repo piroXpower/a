@@ -29,6 +29,7 @@ Bot_Token = config("Bot_Token", default=None)
 HNDLR = config("HANDLER")
 SUDO_USERS = list(map(int, config("SUDO_USERS").split()))
 DEV_USERS = list(map(int, config("DEV_USERS").split()))
+hn = HNDLR #lay-z af
 
 SUDO_USERS.append(OWNER_ID)
 DEV_USERS.append(OWNER_ID)
