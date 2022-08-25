@@ -31,4 +31,4 @@ Bot_Token = config("Bot_Token", default=None)
 
 #TELETHON BOT
 print("[INFO]: STARTING TELETHON BOT CLIENT")
-hackingaibot = TelegramClient('Bot', API_ID, API_HASH).start(bot_token=Bot_Token)
+BotClient = TelegramClient('Bot', API_ID, API_HASH).start(bot_token=Bot_Token)
