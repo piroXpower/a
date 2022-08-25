@@ -7,11 +7,11 @@ import sys
 import heroku3
 import requests
 from telethon import events, custom, Button
+from hackingaibot import hn, BotClient, HEROKU_APP_NAME, HEROKU_API_KEY, SUDO_USERS, DEV_USERS
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 
-from hackingaibot import hn, BotClient, HEROKU_APP_NAME, HEROKU_API_KEY, SUDO_USERS, DEV_USERS
 
 @BotClient.on(events.NewMessage(incoming=True, pattern=r"^/restart(?: |$)(.*)", forwards=False))
 @BotClient.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hn, forwards=False))
