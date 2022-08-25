@@ -29,15 +29,12 @@ help_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 dev_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 **/logs:** Get logs of your heroku app.
-**/addsudo:** Use this while replying to anyone will add him as a temporary sudo user until bot restarts.
-**/rmsudo:** Use this while replying to anyone will remove him from sudo user temporarily until bot restarts.
 Pro Tip: Dev commands includes sudo commands too...
 ©️ @Gladiators_Projects
 """
 
 sudo_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
-**/listsudo:** Get list of all sudo users.
 **/usage:** Check usage of your heroku app.
 **/restart:** Restarts the bot!!(Too fast!! **Supersonic**)
 ©️ @Gladiators_Projects
