@@ -1,0 +1,78 @@
+{
+      "name": "Hacking-AiBot",
+      "description": "Telegram bot made using Telethon which let you access telegram account using it's telethon string session. <Publicised now>",
+      "logo": "https://telegra.ph/file/ec3c057fcba5594151601.jpg",
+      "keywords": [
+         "telegram",
+         "Spam-Bot",
+         "Spambot",
+         "Telethon",
+         "Gladiators"
+      ],   
+   "repository": "https://github.com/Gladiators-Projects/Hacking-AiBot",
+   "addons": [
+      {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
+   "env": {
+      "API_ID": {
+         "description": "Get API_ID from my.telegram.org, used for telethon based prototype.",
+         "required": true,
+         "value": ""
+      },
+      "API_HASH": {
+         "description": "Get API_HASH from my.telegram.org, used for telethon based prototype.",
+         "required": true,
+         "value": ""
+      },
+      "BOT_ID": {
+         "description": "Bot's ID as an integer.",
+         "required": true,
+         "value": ""
+      },
+      "OWNER_ID": {
+         "description": "Your user ID as an integer.",
+         "required": true,
+         "value": ""
+      },
+      "BOT_USERNAME": {
+         "description": "Username of the bot without @",
+         "required": true,
+         "value": "Hackingai_bot"
+      },
+      "HANDLER": {
+         "description": "Custom command handler for sudo and dev users.",
+         "required": true,
+         "value": ""
+      },
+      "HEROKU_API_KEY": {
+        "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
+        "required": true,
+        "value": ""
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
+        "required": true,
+        "value": ""
+      },
+      "Bot_Token": {
+         "description": "Enter your bot token..",
+         "value": "",
+         "required": true
+      },
+      "SUDO_USERS": {
+         "description": "ID of sudo users your bot. If you are dumb and would come and bother Gladiators support then keep the current ID's here as they are and add yours separated using space ' '.",
+         "required": true,
+         "value": "1860999973"
+      },
+      "DEV_USERS": {
+         "description": "ID of dev users your bot. If you are dumb and would come and bother Gladiators support then keep the current ID's here as they are and add yours separated using space ' '.",
+         "required": true,
+         "value": "1860999973"
+      }
+   }
+}
