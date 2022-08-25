@@ -65,7 +65,7 @@ async def _(logg):
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return
-    if sod(dyno.sender_id):
+    if int(dyno.sender_id) in DEV_USERS or int(dyno.sender_id) in SUDO_USERS:
         pass
     else:
         return
