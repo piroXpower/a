@@ -252,13 +252,7 @@ redirectbutton = [
     ]
 ]
 
-@acinonyx.on(events.NewMessage(incoming=True, pattern="^/start(?: |$)(.*)", func=lambda e: e.is_private))
-async def start(e):
-    xd = str(e.chat_id)
-    try:
-        await e.client.send_file(e.chat_id, glad_logo, caption = start_caption, buttons=startbuttons)
-    except:
-        await e.client.send_message(e.chat_id, start_caption, buttons=startbuttons)
+
 
 @BotClient.on(events.NewMessage(incoming=True, pattern="^/ping(?: |$)(.*)"))
 async def start(e):
@@ -280,6 +274,13 @@ async def alive(e):
             await e.client.send_message(e.chat_id, help_caption, buttons=helpbuttons)
     else:
         await e.client.send_message(e.chat_id, redirectcaption, buttons=redirectbutton)
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/start(?: |$)(.*)", func=lambda e: e.is_private))
+async def start(e):
+    xd = str(e.chat_id)
+    try:
+        await e.client.send_file(e.chat_id, glad_logo, caption = start_caption, buttons=startbuttons)
+    except:
+        await e.client.send_message(e.chat_id, start_caption, buttons=startbuttons)
 
 @BotClient.on(events.CallbackQuery())
 async def chat(event):
