@@ -255,13 +255,12 @@ redirectbutton = [
 @acinonyx.on(events.NewMessage(incoming=True, pattern="^/start(?: |$)(.*)", func=lambda e: e.is_private))
 async def start(e):
     xd = str(e.chat_id)
-    addumser = check_adduser(xd)
     try:
         await e.client.send_file(e.chat_id, glad_logo, caption = start_caption, buttons=startbuttons)
     except:
         await e.client.send_message(e.chat_id, start_caption, buttons=startbuttons)
 
-@acinonyx.on(events.NewMessage(incoming=True, pattern="^/ping(?: |$)(.*)"))
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/ping(?: |$)(.*)"))
 async def start(e):
     ping_start = datetime.now()
     ping_end = datetime.now()
@@ -271,7 +270,7 @@ async def start(e):
     await e.client.send_message(e.chat_id, "🎆")
     await e.reply(pomg)
 
-@acinonyx.on(events.NewMessage(incoming=True, pattern="^/help(?: |$)(.*)"))
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/help(?: |$)(.*)"))
 async def alive(e):
     xd = str(e.chat_id)
     if '-' not in xd:
