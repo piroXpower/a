@@ -49,7 +49,7 @@ async def _(logg):
     await v.edit("Got the logs wait a sec")
     await logg.client.send_file(
         logg.chat_id,
-        "Logs.txt",
+        "logs.txt",
         reply_to=logg.id,
         caption="@Gladiators_Projects Logs.",
     )
