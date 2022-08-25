@@ -33,9 +33,7 @@ help_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 dev_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 
-**/addsudo:** Use this while replying to anyone will add him as a sudo user.
-
-**/rmsudo:** Use this while replying to anyone will remove him from sudo user.
+**/logs:** Get logs of your heroku app.
 
 Pro Tip: Dev commands includes sudo commands too...
 
@@ -44,12 +42,6 @@ Pro Tip: Dev commands includes sudo commands too...
 
 sudo_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
-
-**/stats:** Get stats of the bot.
-
-**/leave <chat id>:** Bot will leave that chat.
-
-**/logs:** Get logs of your heroku app.
 
 **/usage:** Check usage of your heroku app.
 
@@ -62,7 +54,7 @@ hack_caption = f"""
 
 Use the following buttons to access the whole help menu.
 
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 
 ©️ @Gladiators_Projects
 """
@@ -125,7 +117,7 @@ chat_caption = f"""
 
 Help text for chat gear is too long so we divided it into 2 parts, use the below button to work with chats...
 
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 
 ©️ @Gladiators_Projects
 """
@@ -212,7 +204,7 @@ I ᴄᴀɴ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ᴠᴀʀɪᴇᴛʏ ᴏғ ᴛᴀsᴋs,
 24 ʜᴏᴜʀs ᴀ ᴅᴀʏ, 7 ᴅᴀʏs ᴀ ᴡᴇᴇᴋ!
 Sʏsᴛᴇᴍs ᴀʀᴇ ɴᴏᴡ ғᴜʟʟʏ ᴏᴘʀᴇᴛɪᴏɴᴀʟ!**
 
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 
 [©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @Gladiators_Projects
 """
