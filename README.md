@@ -4,3 +4,29 @@
 <h3 align="center"> 
 Telegram bot made using Telethon which let you access telegram account using it's telethon string session. &lt;Publicised now>
 </h3>
+
+<p align="center">
+   <img src="https://img.shields.io/github/repo-size/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Repo Size">
+   <img src="https://img.shields.io/github/stars/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Stars">
+   <img src="https://img.shields.io/github/forks/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Forks">
+</p>
+
+<h3 align="center"> 
+    🍺 Deploy your Bot 🍺
+</h3>
+
+<p align="center">
+   <a href="https://heroku.com/deploy?template=https://github.com/Gladiators-Projects/Hacking-AiBot">
+      <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy on heroku">
+   </a>
+</p>
+
+<h3 align="center"> 
+    📝 Requirements 📝
+</h3>
+☞ `API_ID` - Get your API_ID from [my.telegram.org](https://my.telegram.org/)<br>
+☞ `API_HASH` - Get your API_HASH from [my.telegram.org](https://my.telegram.org/)<br>
+☞ `BOT_TOKEN` - Get your bot's token from [BotFather](https://t.me/BotFather).<br>
+☞ `BOT_USERNAME` - Username of your bot.<br>
+☞ `BOT_ID` - User ID of your bot.<br>
+☞ `OWNER_ID` - Your user ID as an integer.<br>
