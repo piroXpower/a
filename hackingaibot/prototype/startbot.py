@@ -358,9 +358,8 @@ async def chat(event):
         )
     elif event.data == b"sudocmds":
         chcksudo = int(event.chat_id)
-        if chcksudo not in DEV_USERS or chcksudo not in SUDO_USERS:
-            return
-        await event.edit(
-            sudo_caption,
-            buttons=help_buttons,
-        )
+        if chcksudo in DEV_USERS or chcksudo in SUDO_USERS:
+            await event.edit(
+                sudo_caption,
+                buttons=help_buttons,
+            )
