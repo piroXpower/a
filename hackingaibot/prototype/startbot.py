@@ -37,10 +37,6 @@ dev_caption = """
 
 **/rmsudo:** Use this while replying to anyone will remove him from sudo user.
 
-**/gcast:** Use this cmd while replying to any message and bot will broadcast that message.
-
-**/runcmmd:** To run python code.
-
 Pro Tip: Dev commands includes sudo commands too...
 
 ©️ @Gladiators_Projects
