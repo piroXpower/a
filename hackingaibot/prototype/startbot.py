@@ -22,6 +22,8 @@ def get_uptime(milliseconds: int) -> str:
     else:
         return uptime_ret
 
+REPO_NAME = "Hacking-AiBot"
+
 glad_logo = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 help_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 dev_caption = """
@@ -42,7 +44,7 @@ sudo_caption = """
 hack_caption = f"""
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 Use the following buttons to access the whole help menu.
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 ©️ @Gladiators_Projects
 """
 
@@ -84,7 +86,7 @@ Syntax: /delete <reason>(optional)
 chat_caption = f"""
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 Help text for chat gear is too long so we divided it into 2 parts, use the below button to work with chats...
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 ©️ @Gladiators_Projects
 """
 
@@ -147,7 +149,7 @@ I ᴄᴀɴ ᴀʟʟᴏᴡ ʏᴏᴜ ᴛᴏ ᴀᴄᴄᴇss ʏᴏᴜʀ ᴀᴄᴄᴏ�
 I ᴄᴀɴ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ᴠᴀʀɪᴇᴛʏ ᴏғ ᴛᴀsᴋs, ᴀs ʙᴇsᴛ I ᴄᴀɴ.
 24 ʜᴏᴜʀs ᴀ ᴅᴀʏ, 7 ᴅᴀʏs ᴀ ᴡᴇᴇᴋ!
 Sʏsᴛᴇᴍs ᴀʀᴇ ɴᴏᴡ ғᴜʟʟʏ ᴏᴘʀᴇᴛɪᴏɴᴀʟ!**
-Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
+Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/Hacking-AiBot) if you like it.
 [©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @Gladiators_Projects
 """
 close_caption = """
