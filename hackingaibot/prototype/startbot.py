@@ -37,6 +37,7 @@ Pro Tip: Dev commands includes sudo commands too...
 
 sudo_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
+**/listsudo:** Get list of all sudo users.
 **/usage:** Check usage of your heroku app.
 **/restart:** Restarts the bot!!(Too fast!! **Supersonic**)
 ©️ @Gladiators_Projects
