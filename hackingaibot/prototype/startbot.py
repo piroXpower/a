@@ -1,37 +1,49 @@
 ###################### HELP MENU + START COMMAND ONLY #####################
 
 import asyncio
-from hackingaibot import BotClient, StartTime, OWNER_ID, BOT_USERNAME, REPO_NAME
+from hackingaibot import BotClient, StartTime, OWNER_ID, BOT_USERNAME, REPO_NAME, SUDO_USERS, DEV_USERS
 from telethon import events, custom, Button
 
-
+def get_uptime(milliseconds: int) -> str:
+    seconds, milliseconds = divmod(int(milliseconds), 1000)
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    days, hours = divmod(hours, 24)
+    weeks, days = divmod(days, 7)
+    uptime_ret = (
+        ((str(weeks) + "ᴡ:") if weeks else "")
+        + ((str(days) + "ᴅ:") if days else "")
+        + ((str(hours) + "ʜ:") if hours else "")
+        + ((str(minutes) + "ᴍ:") if minutes else "")
+        + ((str(seconds) + "s:") if seconds else "")
+    )
+    if uptime_ret.endswith(":"):
+        return uptime_ret[:-1]
+    else:
+        return uptime_ret
 
 glad_logo = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 help_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 dev_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
-**/addsudo:** Use this while replying to anyone will add him as a sudo user.
-**/rmsudo:** Use this while replying to anyone will remove him from sudo user.
-**/gcast:** Use this cmd while replying to any message and bot will broadcast that message.
-**/runcmmd:** To run python code.
+**/logs:** Get logs of your heroku app.
+**/addsudo:** Use this while replying to anyone will add him as a temporary sudo user until bot restarts.
+**/rmsudo:** Use this while replying to anyone will remove him from sudo user temporarily until bot restarts.
 Pro Tip: Dev commands includes sudo commands too...
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 sudo_caption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
-**/stats:** Get stats of the bot.
-**/leave <chat id>:** Bot will leave that chat.
-**/logs:** Get logs of your heroku app.
 **/usage:** Check usage of your heroku app.
 **/restart:** Restarts the bot!!(Too fast!! **Supersonic**)
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 hack_caption = f"""
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 Use the following buttons to access the whole help menu.
 Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 login_caption = """
@@ -40,7 +52,7 @@ login_caption = """
 /pass: To check if there's any 2FA password or not!!
 /phone: To get Phone number of that user.
 /otp: To get last otp on that account.
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 account_caption = """
@@ -66,14 +78,14 @@ Syntax: /whole
 Syntax: /terminate
 /delete:- Deletes that user's account.
 Syntax: /delete <reason>(optional)
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 chat_caption = f"""
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 Help text for chat gear is too long so we divided it into 2 parts, use the below button to work with chats...
 Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 chat_caption1 = """
@@ -92,7 +104,7 @@ Syntax: /demoteall <chat id>
 Syntax: /ban <chat id> <username>
 /banall: Bans all memebers in a chat.
 Syntax: /banall <chat id>
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 chat_caption2 = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
@@ -118,7 +130,7 @@ Syntax: /gpromote <username>
 Syntax: /gdemote <username>
 /gban: Globally bans user in all chats.
 Syntax: /gban <username>
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 start_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
@@ -126,7 +138,7 @@ start_img = "https://telegra.ph/file/ec3c057fcba5594151601.jpg"
 help_caption = """
 **Hᴇʏ ᴍᴀsᴛᴇʀ,
 ʏᴏᴜ ᴄᴀɴ ᴀᴄᴄᴇss ᴛʜᴇ ᴡʜᴏʟᴇ ʜᴇʟᴘ ᴍᴇɴᴜ ʙʏ ᴜsɪɴɢ ᴛʜᴇ ɢɪᴠᴇɴ ʙᴜᴛᴛᴏɴs!**
-[©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @TeamGladiators
+[©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @Gladiators_Projects
 """
 start_caption = f"""
 **Nᴏᴡ ᴍᴇ ᴛᴏ ɪɴᴛʀᴏᴅᴜᴄᴇ ᴍʏsᴇʟғ.
@@ -136,15 +148,215 @@ I ᴄᴀɴ ᴀssɪsᴛ ʏᴏᴜ ᴡɪᴛʜ ᴠᴀʀɪᴇᴛʏ ᴏғ ᴛᴀsᴋs,
 24 ʜᴏᴜʀs ᴀ ᴅᴀʏ, 7 ᴅᴀʏs ᴀ ᴡᴇᴇᴋ!
 Sʏsᴛᴇᴍs ᴀʀᴇ ɴᴏᴡ ғᴜʟʟʏ ᴏᴘʀᴇᴛɪᴏɴᴀʟ!**
 Give a star ❤️ to our [repository](https://github.com/Gladiators-Projects/{REPO_NAME}) if you like it.
-[©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @TeamGladiators
+[©️](https://telegra.ph/file/ec3c057fcba5594151601.jpg) @Gladiators_Projects
 """
 close_caption = """
 **Hᴇʟᴘ ᴍᴇɴᴜ ʜᴀs ʙᴇᴇɴ ᴄʟᴏsᴇᴅ!!**
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
 
 redirectcaption = """
 **ıllıllı★ 𝙷𝚎𝚕𝚙 𝙼𝚎𝚗𝚞 ★ıllıllı**
 Use me in my dm. Click on the below button to redirect.
-©️ @TeamGladiators
+©️ @Gladiators_Projects
 """
+
+helpbuttons = [
+    [
+        Button.inline("Hack Tools", data="hacktools"),
+    ],
+    [
+        Button.inline("Sudo Tools", data="sudocmds"),
+        Button.inline("Dev Tools", data="devcmds"),
+    ],
+    [
+        Button.inline("Check Ping", data="pings"),
+        Button.inline("Close", data="close"),
+    ]
+]
+
+help_buttons = [
+    [
+        Button.inline("Back", data="back"),
+        Button.inline("Close", data="close"),
+    ]
+]
+
+chat_buttons = [
+    [
+        Button.inline("Chat Gear[1]", data="chatgear1"),
+        Button.inline("Chat Gear[2]", data="chatgear2"),
+    ],
+    [
+        Button.inline("Back", data="hacktools"),
+        Button.inline("Close", data="close"),
+    ]
+]
+chatgear =  [
+    [
+        Button.inline("Back", data="chatgear"),
+        Button.inline("Close", data="close"),
+    ]
+]
+
+hack_help = [
+    [
+        Button.inline("Back", data="hacktools"),
+        Button.inline("Close", data="close"),
+    ]
+]
+
+hack_buttons = [
+    [
+        Button.inline("Login Gear", data="logingear"),
+        Button.inline("Account Gear", data="accgear"),
+    ],
+    [
+        Button.inline("Chat Gear", data="chatgear"),
+        Button.inline("Global Gear", data="globalgear"),
+    ],
+    [
+        Button.inline("Back", data="back"),
+        Button.inline("Close", data="close"),
+    ]
+]
+
+back_buttons = [
+    [
+        Button.inline("Back", data="back"),
+    ]
+]
+startbuttons = [
+    [
+        (Button.url("Projects", url="https://t.me/Gladiators_Projects")),
+        (Button.url("Support", url="https://t.me/Gladiators_Support")),
+    ],
+    [
+        (Button.url("Organisation", url="https://github.com/Gladiators-Projects")),
+        (Button.url("Repo", url="https://github.com/Gladiators-Projects")),
+    ],
+    [
+        Button.inline("Help Menu", data="open"),
+    ]
+]
+  
+openbuttons = [
+    [
+        Button.inline("Open Again", data="open"),
+    ]
+]
+
+redirectbutton = [
+    [
+        Button.url("Redirect", url=f"t.me/{BOT_USERNAME}?start=help"),
+    ]
+]
+
+@acinonyx.on(events.NewMessage(incoming=True, pattern="^/start(?: |$)(.*)", func=lambda e: e.is_private))
+async def start(e):
+    xd = str(e.chat_id)
+    addumser = check_adduser(xd)
+    try:
+        await e.client.send_file(e.chat_id, glad_logo, caption = start_caption, buttons=startbuttons)
+    except:
+        await e.client.send_message(e.chat_id, start_caption, buttons=startbuttons)
+
+@acinonyx.on(events.NewMessage(incoming=True, pattern="^/ping(?: |$)(.*)"))
+async def start(e):
+    ping_start = datetime.now()
+    ping_end = datetime.now()
+    ms = (ping_end-ping_start).microseconds / 1000
+    uptime = TeamArsenic_time((time.time() - StartTime) * 1000)
+    pomg = f"•• Pᴏɴɢ !! ••\n⏱ Pɪɴɢ sᴘᴇᴇᴅ : {ms}ᴍs\n⏳ Uᴘᴛɪᴍᴇ - {uptime}"
+    await e.client.send_message(e.chat_id, "🎆")
+    await e.reply(pomg)
+
+@acinonyx.on(events.NewMessage(incoming=True, pattern="^/help(?: |$)(.*)"))
+async def alive(e):
+    xd = str(e.chat_id)
+    if '-' not in xd:
+        try:
+            await e.client.send_file(e.chat_id, glad_logo, caption = help_caption, buttons=helpbuttons)
+        except:
+            await e.client.send_message(e.chat_id, help_caption, buttons=helpbuttons)
+    else:
+        await e.client.send_message(e.chat_id, redirectcaption, buttons=redirectbutton)
+
+@BotClient.on(events.CallbackQuery())
+async def chat(event):
+    if event.data == b"hacktools":
+        await event.edit(
+            hack_caption,
+            buttons=hack_buttons,
+        )
+    elif event.data == b"pings":
+        ping_start = datetime.now()
+        ping_end = datetime.now()
+        ms = (ping_end-ping_start).microseconds
+        uptime = get_uptime((time.time() - StartTime) * 1000)
+        pomg = f"•• Pᴏɴɢ !! ••\n⏱ Pɪɴɢ sᴘᴇᴇᴅ : {ms}ᴍs\n⏳ Uᴘᴛɪᴍᴇ - {uptime}"
+        await event.edit(
+            pomg,
+            buttons=help_buttons,
+        )
+    elif event.data == b"back":
+        await event.edit(
+            help_caption,
+            buttons=helpbuttons,
+        )
+    elif event.data == b"open":
+        await event.edit(
+            help_caption,
+            buttons=helpbuttons,
+        )
+    elif event.data == b"close":
+        await event.edit(
+            close_caption,
+            buttons=openbuttons,
+        )
+    elif event.data == b"logingear":
+        await event.edit(
+            login_caption,
+            buttons=hack_help,
+        )
+    elif event.data == b"accgear":
+        await event.edit(
+            account_caption,
+            buttons=hack_help,
+        )
+    elif event.data == b"chatgear":
+        await event.edit(
+            chat_caption,
+            buttons=chat_buttons,
+        )
+    elif event.data == b"chatgear1":
+        await event.edit(
+            chat_caption1,
+            buttons=chatgear,
+        )
+    elif event.data == b"chatgear2":
+        await event.edit(
+            chat_caption2,
+            buttons=chatgear,
+        )
+    elif event.data == b"globalgear":
+        await event.edit(
+            global_caption,
+            buttons=hack_help,
+        )
+    elif event.data == b"devcmds":
+        chcksudo = int(event.chat_id)
+        if chcksudo in DEV_USERS:
+            return
+        await event.edit(
+            dev_caption,
+            buttons=help_buttons,
+        )
+    elif event.data == b"sudocmds":
+        chcksudo = int(event.chat_id)
+        if chcksudo in DEV_USERS or chcksudo in SUDO_USERS:
+            return
+        await event.edit(
+            sudo_caption,
+            buttons=help_buttons,
+        )
