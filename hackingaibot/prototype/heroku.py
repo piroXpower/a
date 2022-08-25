@@ -6,6 +6,7 @@ from datetime import datetime
 import sys
 import heroku3
 import requests
+from telethon import events, custom, Button
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
