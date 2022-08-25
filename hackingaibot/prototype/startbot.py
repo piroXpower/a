@@ -231,11 +231,11 @@ back_buttons = [
 startbuttons = [
     [
         (Button.url("Projects", url="https://t.me/Gladiators_Projects")),
-        (Button.url("Support", url="https://t.me/Gladiators_Support")),
+        (Button.url("Support", url="https://t.me/ProjectsChat")),
     ],
     [
         (Button.url("Organisation", url="https://github.com/Gladiators-Projects")),
-        (Button.url("Repo", url="https://github.com/Gladiators-Projects")),
+        (Button.url("Repo", url="https://github.com/Gladiators-Projects/Hacking-AiBot")),
     ],
     [
         Button.inline("Help Menu", data="open"),
