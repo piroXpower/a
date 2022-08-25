@@ -9,7 +9,7 @@ from datetime import datetime
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-REPO_NAME =  "hacking-aibot"
+REPO_NAME =  "Hacking-AiBot"
 StartTime = time.time()
 
 # logging
