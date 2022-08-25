@@ -26,8 +26,13 @@ BOT_USERNAME = config("BOT_USERNAME")
 HEROKU_API_KEY = config("HEROKU_API_KEY", default=None)
 HEROKU_APP_NAME  = config("HEROKU_APP_NAME", default=None)
 Bot_Token = config("Bot_Token", default=None)
+SUDO_USERS = list(map(int, config("SUDO_USERS").split()))
+DEV_USERS = list(map(int, config("DEV_USERS").split()))
 
-
+SUDO_USERS.append(OWNER_ID)
+DEV_USERS.append(OWNER_ID)
+SUDO_USERS = list(SUDO_USERS)
+DEV_USERS = list(DEV_USERS)
 
 #TELETHON BOT
 print("[INFO]: STARTING TELETHON BOT CLIENT")
