@@ -7,3 +7,6 @@ OWNER_ID = 1860999973
 BOT_ID=
 
 BOT_USERNAME = 'Hacking_aibot'  #username without '@'
+
+
+HANDLER = "!"
