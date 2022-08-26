@@ -21,7 +21,7 @@ Telegram bot made using Telethon which let you access telegram account using it'
 <h3 align="center">
    <a href="https://heroku.com/deploy?template=https://github.com/Gladiators-Projects/Hacking-AiBot">
       <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy on heroku">
-   </a><br>
+   </a><br><br>
    Proceed to <a href="https://github.com/Gladiators-Projects/Hacking-AiBot/blob/main/config.example">config.example</a> to get an idea about vars filling...
 </h3><br>
 
