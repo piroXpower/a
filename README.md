@@ -4,7 +4,9 @@
 <h1 align="center"> 
    ◈💠 Hacking-AiBot 💠◈
 </h1>
-
+<h3 align="center"> 
+Telegram bot made using Telethon which let you access telegram account using it's telethon string session.<br>&lt;Publicised now>
+</h3>
 
 <p align="center">
    <img src="https://img.shields.io/github/repo-size/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Repo Size">
