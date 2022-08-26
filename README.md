@@ -46,6 +46,7 @@ Telegram bot made using Telethon which let you access telegram account using it'
 ☞ `OWNER_ID` - Your user ID as an integer.<br>
 
 <br>
+
 ```
 Don't foget to give this repository a star. ❤️
 ```
