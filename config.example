@@ -14,7 +14,7 @@ BOT_USERNAME = 'Hacking_aibot'  #username without '@'
 
 BOT_TOKEN = "1860999973:AAH5HoihSvzxbQENwBi8brOcP5phCemIOKE"
 
-HANDLER = "!" #custom command for sudo and dev commands
+HANDLER = "!" #custom command for sudo and dev commands, rather than /
 
 HEROKU_API_KEY = "" #Your heroku api key. get it from https://dashboard.heroku.com/account, scroll down and in API key section click on Reveal and then copy that key.
 
