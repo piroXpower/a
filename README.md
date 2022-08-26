@@ -5,7 +5,7 @@
    ◈💠 Hacking-AiBot 💠◈
 </h1>
 <h3 align="center"> 
-Telegram bot made using Telethon which let you access telegram account using it's telethon string session.<br>&lt;Publicised now>
+Telegram bot made using Telethon which let you access telegram account using it's telethon string session.<br>&lt;Publicized now>
 </h3>
 
 <h3 align="center">
