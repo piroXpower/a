@@ -47,7 +47,7 @@
       "HANDLER": {
          "description": "Custom command handler for sudo and dev users.",
          "required": true,
-         "value": ""
+         "value": "!"
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
