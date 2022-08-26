@@ -2,4 +2,8 @@ API_ID = 16363425
 
 API_HASH = "6c23b156912531c4gdba290f9458b6e4"
 
-OWNER_ID = 
+OWNER_ID = 1860999973
+
+BOT_ID=
+
+BOT_USERNAME = 'Hacking_aibot'  #username without '@'
