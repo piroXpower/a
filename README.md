@@ -8,11 +8,11 @@
 Telegram bot made using Telethon which let you access telegram account using it's telethon string session.<br>&lt;Publicised now>
 </h3>
 
-<p align="center">
+<h3 align="center">
    <img src="https://img.shields.io/github/repo-size/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Repo Size">
    <img src="https://img.shields.io/github/stars/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Stars">
    <img src="https://img.shields.io/github/forks/Gladiators-Projects/Hacking-AiBot?style=for-the-badge&logo=appveyor" alt="Forks">
-</p>
+</h3><br>
 
 <h1 align="center"> 
     👾 Deploy your own Hacking-AiBot 👾
@@ -23,7 +23,7 @@ Telegram bot made using Telethon which let you access telegram account using it'
       <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy on heroku">
    </a><br>
    Proceed to <a href="https://github.com/Gladiators-Projects/Hacking-AiBot/blob/main/config.example">config.example</a> to get an idea about vars filling...
-</h3>
+</h3><br>
 
 <h1 align="center"> 
     📃 License 📃
@@ -31,7 +31,10 @@ Telegram bot made using Telethon which let you access telegram account using it'
 <h3 align="center">
   <a href="https://github.com/Gladiators-Projects/Hacking-AiBot"><img src="https://www.gnu.org/graphics/gplv3-or-later.png" alt="License"></a><br>
   <a href="https://github.com/Gladiators-Projects/Hacking-AiBot">Hacking-AiBot</a> is licensed under <a href = "https://www.gnu.org/licenses/gpl-3.0.html">GNU Affero General Public License.</a>
-</h3>
+</h3><br>
+
+
+
 
 
 <h1 align="center"> 
