@@ -2,13 +2,13 @@
 # Don't use values from this file. This file is just made to give you an idea about vars filling.
 
 
-API_ID = 16363425
+API_ID = 16363425 #Your API id
 
-API_HASH = "6c23b156912531c4gdba290f9458b6e4"
+API_HASH = "6c23b156912531c4gdba290f9458b6e4" #Your API hash
 
-OWNER_ID = 1860999973
+OWNER_ID = 1860999973 #Your user id (only 1 value)
 
-BOT_ID = 1903096644
+BOT_ID = 1903096644 #Bot's user id
 
 BOT_USERNAME = 'Hacking_aibot'  #username without '@'
 
