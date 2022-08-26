@@ -1,3 +1,7 @@
+# Get an idea about vars filling from this file.
+# Don't use values from this file. This file is just made to give you an idea about vars filling.
+
+
 API_ID = 16363425
 
 API_HASH = "6c23b156912531c4gdba290f9458b6e4"
@@ -12,6 +16,6 @@ BOT_TOKEN = "1860999973:AAH5HoihSvzxbQENwBi8brOcP5phCemIOKE"
 
 HANDLER = "!"
 
-HEROKU_API_KEY=
+HEROKU_API_KEY =
 
-HEROKU_APP_NAME-=
+HEROKU_APP_NAME =
