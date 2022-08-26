@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="hackingaibot/resources/Gladiators.jpeg" alt="Logo">
+</p>
 <h1 align="center"> 
    ◈💠 Hacking-AiBot 💠◈
 </h1>
@@ -12,7 +15,7 @@ Telegram bot made using Telethon which let you access telegram account using it'
 </p>
 
 <h3 align="center"> 
-    🍺 Deploy your Bot 🍺
+    👾 Deploy your own Hacking-AiBot 👾
 </h3>
 
 <p align="center">
@@ -21,6 +24,10 @@ Telegram bot made using Telethon which let you access telegram account using it'
    </a><br>
    Proceed to <a href="https://github.com/Gladiators-Projects/Hacking-AiBot/blob/main/config.example">config.example</a> to get an idea about vars filling...
 </p>
+
+<h3 align="center"> 
+    🛠️ Languages and Tools 🛠️
+</h3>
 
 <h3 align="center"> 
     📝 Requirements 📝
