@@ -34,9 +34,6 @@ Telegram bot made using Telethon which let you access telegram account using it'
 </h3><br>
 
 
-
-
-
 <h1 align="center"> 
     📝 Requirements 📝
 </h1>
@@ -47,3 +44,8 @@ Telegram bot made using Telethon which let you access telegram account using it'
 ☞ `BOT_USERNAME` - Username of your bot without '@'.<br>
 ☞ `BOT_ID` - User ID of your bot.<br>
 ☞ `OWNER_ID` - Your user ID as an integer.<br>
+
+<br>
+```
+Don't foget to give this repository a star. ❤️
+```
