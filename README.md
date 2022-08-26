@@ -28,8 +28,11 @@ Telegram bot made using Telethon which let you access telegram account using it'
 <h3 align="center"> 
     📃 License 📃
 </h3>
-[![License](https://www.gnu.org/graphics/gplv3-or-later.png)](LICENSE) 
-[Hacking-AiBot](https://github.com/Gladiators-Projects/Hacking-AiBot) is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
+<p align="center">
+  <img src="https://www.gnu.org/graphics/gplv3-or-later.png" alt="License"><br>
+  <a href="https://github.com/Gladiators-Projects/Hacking-AiBot">Hacking-AiBot</a> is licensed under <a href = "https://www.gnu.org/licenses/gpl-3.0.html">GNU Affero General Public License<?a>
+</p>
+
 
 <h3 align="center"> 
     📝 Requirements 📝
