@@ -24,9 +24,10 @@ Telegram bot made using Telethon which let you access telegram account using it'
 <h3 align="center"> 
     📝 Requirements 📝
 </h3>
-☞ `API_ID` - Get your API_ID from [my.telegram.org](https://my.telegram.org/)<br>
-☞ `API_HASH` - Get your API_HASH from [my.telegram.org](https://my.telegram.org/)<br>
-☞ `BOT_TOKEN` - Get your bot's token from [BotFather](https://t.me/BotFather).<br>
+
+☞ `API_ID` - Get your API_ID from <a href="https://my.telegram.org/">my.telegram.org</a><br>
+☞ `API_HASH` - Get your API_HASH from <a href="https://my.telegram.org/">my.telegram.org</a><br>
+☞ `BOT_TOKEN` - Get your bot's token from <a href="https://t.me/BotFather">BotFather.<br>
 ☞ `BOT_USERNAME` - Username of your bot.<br>
 ☞ `BOT_ID` - User ID of your bot.<br>
 ☞ `OWNER_ID` - Your user ID as an integer.<br>
