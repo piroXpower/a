@@ -48,5 +48,5 @@ Telegram bot made using Telethon which let you access telegram account using it'
 <br>
 
 ```
-Don't foget to give this repository a star. ❤️
+Don't foget to star this repository. Much love ❤️
 ```
