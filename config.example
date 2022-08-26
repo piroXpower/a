@@ -14,12 +14,12 @@ BOT_USERNAME = 'Hacking_aibot'  #username without '@'
 
 BOT_TOKEN = "1860999973:AAH5HoihSvzxbQENwBi8brOcP5phCemIOKE"
 
-HANDLER = "!"
+HANDLER = "!" 
 
 HEROKU_API_KEY = "" #Your heroku api key. get it from https://dashboard.heroku.com/account, scroll down and in API key section click on Reveal and then copy that key.
 
-HEROKU_APP_NAME = "" #Name of your heroku app....
+HEROKU_APP_NAME = "" #Your heroku app name....
 
-SUDO_USERS = 
+SUDO_USERS = "1860999973 1787040289 1818824488" #For more than sudo users just separate their user id with space ' '.
 
-DEV_USERS = 
+DEV_USERS = "1860999973" #For more than dev users just separate their user id with space ' '.
