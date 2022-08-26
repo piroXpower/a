@@ -16,9 +16,9 @@ BOT_TOKEN = "1860999973:AAH5HoihSvzxbQENwBi8brOcP5phCemIOKE"
 
 HANDLER = "!"
 
-HEROKU_API_KEY =
+HEROKU_API_KEY = "" #Your heroku api key. get it from https://dashboard.heroku.com/account, scroll down and in API key section click on Reveal and then copy that key.
 
-HEROKU_APP_NAME =
+HEROKU_APP_NAME = "" #Name of your heroku app....
 
 SUDO_USERS = 
 
