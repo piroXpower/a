@@ -4,9 +4,11 @@ API_HASH = "6c23b156912531c4gdba290f9458b6e4"
 
 OWNER_ID = 1860999973
 
-BOT_ID=
+BOT_ID = 1903096644
 
 BOT_USERNAME = 'Hacking_aibot'  #username without '@'
 
+BOT_TOKEN = "1860999973:AAH5HoihSvzxbQENwBi8brOcP5phCemIOKE"
 
 HANDLER = "!"
+
