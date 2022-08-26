@@ -295,7 +295,7 @@ startbuttons = [
     ],
     [
         (Button.url("Organisation", url="https://github.com/Gladiators-Projects")),
-        (Button.url("Repo", url="https://github.com/Gladiators-Projects/Hacking-AiBot")),
+        (Button.url("Source Code", url="https://github.com/Gladiators-Projects/Hacking-AiBot")),
     ],
     [
         Button.inline("Help Menu", data="open"),
