@@ -42,7 +42,7 @@ from asyncio import sleep
 from io import BytesIO
 from os import remove
 from hackingaibot import BotClient
-from prototype import API_ID, API_HASH
+from hackingaibot import API_ID, API_HASH
 APIID = str(API_ID)
 
 session = {}
