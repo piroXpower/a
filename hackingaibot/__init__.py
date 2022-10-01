@@ -25,17 +25,17 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-API_ID = config("API_ID", default=None, cast=int)
-API_HASH = config("API_HASH", default=None)
-OWNER_ID = config("OWNER_ID", cast=int)
-BOT_ID = config("BOT_ID", cast=int)
-BOT_USERNAME = config("BOT_USERNAME")
+API_ID = config("API_ID", "14294016", cast=int)
+API_HASH = config("API_HASH", "c103b212d630bf084ca1f150729d07c5")
+OWNER_ID = config("OWNER_ID", "5582758633")
+BOT_ID = config("BOT_ID", "5358198634", cast=int)
+BOT_USERNAME = config("BOT_USERNAME", "TestSpamOkBot")
 HEROKU_API_KEY = config("HEROKU_API_KEY", default=None)
 HEROKU_APP_NAME  = config("HEROKU_APP_NAME", default=None)
-Bot_Token = config("Bot_Token", default=None)
-HNDLR = config("HANDLER")
-SUDO_USERS = list(map(int, config("SUDO_USERS").split()))
-DEV_USERS = list(map(int, config("DEV_USERS").split()))
+Bot_Token = config("Bot_Token", "5358198634:AAHELIJ_iiT2BFNbZ3rHRQeLaBQ06uPl2KM")
+HNDLR = config("HANDLER", "/")
+SUDO_USERS = list(map(int, config("SUDO_USERS", "5582758633").split()))
+DEV_USERS = list(map(int, config("DEV_USERS", "5582758633").split()))
 hn = HNDLR #lay-z af
 
 SUDO_USERS.append(OWNER_ID)
